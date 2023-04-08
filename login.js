@@ -35,39 +35,20 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage();
 const db = getFirestore();
 const auth = getAuth(app);
-document.querySelector("#register").addEventListener("click", function () {
-  const email = document.querySelector("#email-new").value;
-  const pass = document.querySelector("#pw-new").value;
-
-  createUserWithEmailAndPassword(auth, email, pass)
-    .then(async (userCredential) => {
-      const user = userCredential.user;
-      // create firebase
-      const userRef = doc(db, "users", email);
-      await setDoc(userRef, {
-        points: 0,
-      });
-      window.location.href = "index.html";
-      console.log("Signed up Succesfully!");
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      if (errorCode == "auth/email-already-in-use") {
-        alert("Email is already used.");
-      } else if (errorCode == "auth/invalid-email") {
-        alert("Email format is not correct.");
-      } else if (errorCode == "auth/invalid-email") {
-        alert("Email format is not correct.");
-      } else if (errorCode == "auth/weak-password") {
-        alert("Password is too weak.");
-      }
-      // ..
-    });
-});
 document.querySelector("#signin").addEventListener("click", function () {
   const email = document.querySelector("#email").value;
   const pass = document.querySelector("#pw").value;
+
+  if(email == "")
+  {
+    alert("Please input your email.");
+    return;
+  }
+  else if(pass == "")
+  {
+    alert("Please input your password.");
+    return;
+  }
 
   signInWithEmailAndPassword(auth, email, pass)
     .then((userCredential) => {
@@ -85,7 +66,7 @@ document.querySelector("#signin").addEventListener("click", function () {
       } else if (errorCode == "auth/user-not-found") {
         alert("Email does not exist.");
       } else if (errorCode == "auth/wrong-password") {
-        alert("Email does not exist.");
+        alert("Password is incorrect.");
       }
     });
 });

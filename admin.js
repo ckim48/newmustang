@@ -25,6 +25,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  signOut
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -44,9 +45,36 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const db = firebase.firestore();
 const storage = getStorage();
-const db = getFirestore();
+const db = getFirestore(app);
 const auth = getAuth();
 const ITEM_CLASSNAME = "listItems";
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    document.getElementById('navbar-login').style.display = "none";
+    document.getElementById('navbar-logout').style.display = "block";
+    if(user.email == "admin@admin.com")
+    {
+      document.getElementById('navbar-admin').style.display = "block";
+    }
+    document.getElementById('navbar-logout').style.cursor = "pointer";
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+document.getElementById('navbar-logout').addEventListener("click", function() {
+  signOut(auth).then(() => {
+    window.location.replace("login.html")
+  }).catch((error) => {
+    // An error happened.
+  });
+})
 
 const init = async function uploadBeforePromise() {
   return new Promise(function (resolve, reject) {
@@ -85,6 +113,7 @@ const getData = async () => {
     let block = document.createElement("div");
     block.id = doc.id;
     block.email = doc.data().email;
+    block.style = "margin-bottom: 20px;"
     let before = document.createElement("img");
     let after = document.createElement("img");
     let email = document.createElement("div");

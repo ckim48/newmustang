@@ -46,7 +46,7 @@
     />
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <script type="module" src="/admin.js"></script>
+    <script type="module" src="./admin.js"></script>
   </head>
 
   <body>
@@ -59,13 +59,14 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a href="index.html">Makeover</a></li>
+            <li><a href="index.html">Home</a></li>
 
             <!-- <li><a href="index.html#about">About</a></li> -->
 
-            <li><a href="memories.html">Memories</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="admin.html" class="active">Admin</a></li>
+            <li><a href="memories.html">Makeovers</a></li>
+            <li id="navbar-admin"><a href="admin.html" class="active">Admin</a></li>
+            <li id="navbar-login"><a href="login.html">Login</a></li>
+            <li id="navbar-logout" style="display: none;"><a href="">Logout</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

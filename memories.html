@@ -1,84 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Mustang Makeover</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" /> -->
+  <title>Mustang Makeover</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" /> -->
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <script type="module" src="/memories.js"></script>
-  </head>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center">
-      <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="index.html">Mustang Makeover</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <script type="module" src="./memories.js"></script>
+  <style>
+    #inner_title {
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 30px;
+      font-weight: bold;
+    }
 
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a href="index.html">Makeover</a></li>
+    #inner_title span {
+      font-size: 12px;
+      font-weight: normal;
+    }
 
-            <!-- <li><a href="index.html#about">About</a></li> -->
+    #bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 100px;
+    }
 
-            <li><a href="team.html" class="active">Memories</a></li>
-            <li><a href="login.html">Login</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
+    #email {
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #upload_date {
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .inner_container {
+      position: relative;
+      width: 900px;
+      height: 600px;
+      border: 2px solid white;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .inner_container .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 900px 100%;
+    }
+
+    .inner_container .background-img {
+      background-image: url("/assets/img/bg1.jpeg");
+    }
+
+    .inner_container .foreground-img {
+      background-image: url("/assets/img/bg2.jpeg");
+      width: 50%;
+    }
+
+    .inner_container .slider {
+      position: absolute;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 101%;
+      height: 100%;
+      background: rgba(242, 242, 242, 0.3);
+      outline: none;
+      margin: 0;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inner_container .slider:hover {
+      background: rgba(242, 242, 242, 0.1);
+    }
+
+    .inner_container .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 6px;
+      height: 600px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .inner_container .slider::-moz-range-thumb {
+      width: 6px;
+      height: 600px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .inner_container .slider-button {
+      pointer-events: none;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: white;
+      left: calc(50% - 14px);
+      top: calc(50% - 16px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inner_container .slider-button:after {
+      content: "";
+      padding: 3px;
+      display: inline-block;
+      border: solid #5D5D5D;
+      border-width: 0 2px 2px 0;
+      transform: rotate(-45deg);
+    }
+
+    .inner_container .slider-button:before {
+      content: "";
+      padding: 3px;
+      display: inline-block;
+      border: solid #5D5D5D;
+      border-width: 0 2px 2px 0;
+      transform: rotate(135deg);
+    }
+
+    @media only screen and (max-width: 900px)
+    {
+      .inner_container {
+        width: 700px;
+        height: 500px;
+      }
+
+      .inner_container .slider::-webkit-slider-thumb {
+        height: 500px;
+      }
+  
+      .inner_container .slider::-moz-range-thumb {
+        height: 500px;
+      }
+
+      #inner_title {
+        width: 700px;
+        font-size: 20px;
+      }
+  
+      #inner_title span {
+        font-size: 12px;
+      }
+
+      #bottom-nav {
+        width: 700px;
+      }
+
+      #email {
+        width: 700px;
+      }
+  
+      #upload_date {
+        width: 700px;
+      }
+  
+    }
+
+    @media only screen and (max-width: 700px)
+    {
+      .inner_container {
+        width: 500px;
+        height: 350px;
+      }
+
+      .inner_container .slider::-webkit-slider-thumb {
+        height: 350px;
+      }
+  
+      .inner_container .slider::-moz-range-thumb {
+        height: 350px;
+      }
+
+      #inner_title {
+        width: 500px;
+        font-size: 20px;
+      }
+  
+      #inner_title span {
+        font-size: 12px;
+      }
+
+      #bottom-nav {
+        width: 500px;
+      }
+
+      #email {
+        width: 500px;
+      }
+  
+      #upload_date {
+        width: 500px;
+      }
+    }
+
+    @media only screen and (max-width: 500px)
+    {
+      .inner_container {
+        width: 100%;
+        height: 300px;
+      }
+
+      
+      .inner_container .slider::-webkit-slider-thumb {
+        height: 300px;
+      }
+  
+      .inner_container .slider::-moz-range-thumb {
+        height: 300px;
+      }
+
+      #inner_title {
+        width: 100%;
+      }
+  
+      #inner_title span {
+        font-size: 12px;
+      }
+
+      #bottom-nav {
+        width: 100%;
+      }
+
+      #email {
+        width: 100%;
+      }
+  
+      #upload_date {
+        width: 100%;
+      }
+    }
+
+    .previous {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    .next {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+    
+    .previous:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .next:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+      border-radius: 20px;
+    }
+    
+    .next {
+      background-color: #42C532;
+      color: white;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="index.html">Mustang Makeover</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <!-- <li><a href="index.html#about">About</a></li> -->
+
+          <li><a href="memories.html" class="active">Makeovers</a></li>
+          <li id="navbar-admin" style="display: none;"><a href="admin.html">Admin</a></li>
+          <li id="navbar-login"><a href="login.html">Login</a></li>
+          <li id="navbar-logout" style="display: none;"><a href="">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+
+  <!-- End Header -->
+
+  <main id="main">
+    <!-- Start Gallery -->
+    <div style="margin-top: 100px">
+      <div style="display: none;" id="spinner-loading">
+        <div style="height: 80vh; display: flex; justify-content: center; align-items: center;">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </div>
-    </header>
-
-    <!-- End Header -->
-
-    <main id="main">
-      <!-- Start Gallery -->
-
-      <!-- <button style="width: 90%;" class="btn btn-danger mt-5 mx-5" id="show">Show Gallery</button> -->
-      <section id="team" class="team">
+      <div id="image-main">
+        <div id="inner_title">
+          Makeover Images <span>(Move the slider to see difference)</span>
+        </div>
+        <div class='inner_container'>
+          <div class='img background-img' id="before-image"></div>
+          <div class='img foreground-img' id="after-image"></div>
+          <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
+          <div class='slider-button'></div>
+        </div>
+        <div id="email">
+          Email:
+        </div>
+        <div id="upload_date">
+          Upload Date:
+        </div>
+        <div id="bottom-nav">
+          <a href="#" class="previous" id="previous">&laquo; Previous</a>
+          <a href="#" class="next" id="next">Next &raquo;</a>
+        </div>
+      </div>
+  </div>
+    <!-- <button style="width: 90%;" class="btn btn-danger mt-5 mx-5" id="show">Show Gallery</button> -->
+    <!-- <section id="team" class="team">
         <div style="flex-direction: column; display: flex" class="mt-5">
           <div  class="mx-5">
             <center id="container">
@@ -93,42 +388,50 @@
               justify-content: space-evenly;
             "
           ></div>
-          <!-- <div class="before" style="flex: 1">Before</div>
-            <div class="after" style="flex: 1">After</div> -->
+          <div class="before" style="flex: 1">Before</div>
+          <div class="after" style="flex: 1">After</div>
         </div>
-      </section>
+      </section> -->
 
-    
-    </main>
-    <!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-      <div class="container">
-        <div class="credits">Designed by Mustang Makeover</div>
-      </div>
-    </footer>
-    <!-- End Footer -->
+  </main>
+  <!-- End #main -->
 
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">Designed by Mustang Makeover</div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-  </body>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    $("#slider").on("input change", (e)=>{
+      const sliderPos = e.target.value;
+      // Update the width of the foreground image
+      $('.foreground-img').css('width', `${sliderPos}%`)
+      // Update the position of the slider button
+      $('.slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+    });
+  </script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>

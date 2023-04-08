@@ -14,7 +14,9 @@
   <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -26,11 +28,486 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <script type="module" src="/index.js"></script>
+  <script type="module" src="./index.js"></script>
+  <style>
+    .uploader {
+      display: block;
+      clear: both;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+    }
 
+    .uploader label {
+      float: left;
+      clear: both;
+      height: 260px;
+      width: 100%;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background: #fff;
+      border-radius: 7px;
+      border: 3px solid #eee;
+      transition: all 0.2s ease;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    #descript {
+      float: left;
+      clear: both;
+      height: 260px;
+      width: 100%;
+      padding: 1rem 1rem;
+      background: #fff;
+      border-radius: 7px;
+      border: 3px solid #eee;
+      transition: all 0.2s ease;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      resize: none;
+    }
+
+    .uploader label:hover {
+      border-color: #454cad;
+    }
+
+    .uploader label.hover {
+      border: 3px solid #454cad;
+      box-shadow: inset 0 0 0 6px #eee;
+    }
+
+    .uploader label.hover #start i.fa {
+      transform: scale(0.8);
+      opacity: 0.3;
+    }
+
+    .uploader label.hover #start2 i.fa {
+      transform: scale(0.8);
+      opacity: 0.3;
+    }
+
+    .uploader #start {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #start2 {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #start.hidden {
+      display: none;
+    }
+
+    .uploader #start2.hidden {
+      display: none;
+    }
+
+    .uploader #start i.fa {
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .uploader #start2 i.fa {
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .uploader #response {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #response2 {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #response.hidden {
+      display: none;
+    }
+
+    .uploader #response2.hidden {
+      display: none;
+    }
+
+    .uploader #response #messages {
+      margin-bottom: 0.5rem;
+    }
+
+    .uploader #response2 #messages2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .uploader #file-image {
+      display: inline;
+      margin: 0 auto 0.5rem auto;
+      width: auto;
+      height: auto;
+      max-width: 250px;
+      max-height: 250px;
+    }
+
+    .uploader #file-image2 {
+      display: inline;
+      margin: 0 auto 0.5rem auto;
+      width: auto;
+      height: auto;
+      max-width: 250px;
+      max-height: 180px;
+    }
+
+    .uploader #file-image.hidden {
+      display: none;
+    }
+
+    .uploader #file-image2.hidden {
+      display: none;
+    }
+
+    .uploader #notimage {
+      display: block;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #notimage2 {
+      display: block;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #notimage.hidden {
+      display: none;
+    }
+
+    .uploader #notimage2.hidden {
+      display: none;
+    }
+
+    .uploader progress,
+    .uploader .progress {
+      display: inline;
+      clear: both;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 180px;
+      height: 8px;
+      border: 0;
+      border-radius: 4px;
+      background-color: #eee;
+      overflow: hidden;
+    }
+
+    .uploader .progress[value]::-webkit-progress-bar {
+      border-radius: 4px;
+      background-color: #eee;
+    }
+
+    .uploader .progress[value]::-webkit-progress-value {
+      background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+      border-radius: 4px;
+    }
+
+    .uploader .progress[value]::-moz-progress-bar {
+      background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+      border-radius: 4px;
+    }
+
+    .uploader input[type=file] {
+      display: none;
+    }
+
+    .uploader div {
+      margin: 0 0 0.5rem 0;
+      color: #5f6982;
+    }
+
+    .uploader .btn {
+      display: inline-block;
+      margin: 0.5rem 0.5rem 1rem 0.5rem;
+      clear: both;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      text-transform: initial;
+      border: none;
+      border-radius: 0.2rem;
+      outline: none;
+      padding: 0 1rem;
+      height: 36px;
+      line-height: 36px;
+      color: #fff;
+      transition: all 0.2s ease-in-out;
+      box-sizing: border-box;
+      background: #454cad;
+      border-color: #454cad;
+      cursor: pointer;
+    }
+
+    html {
+      --black:	#21252a;
+      --grey-1: #343A40;
+      --grey-2: #495057;
+      --grey-3: #868E96;
+      --grey-4: #ADB5BD;
+      --grey-5: #CED4DA;
+      --grey-6: #DEE2E6;
+      --grey-7: #E9ECEF;
+      --grey-8: #F1F3F5;
+      --grey-9: #F8F9FA;
+      --trans-black: rgba(33, 37, 42, .9);
+      --red: #e10600;
+      --gold: #ffda65;
+      --gold-dark: #a3862c;
+      --bronze: #c99355;
+      --bronze-dark: #80582c;
+    }
+
+    .list {
+      width: 100%;
+      max-width: 600px;
+      margin: 3rem auto 3rem;
+      border-radius: 0.4rem;
+      box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1), 0px 5px 12px rgba(0, 0, 0, 0.07);
+    }
+    @media screen and (max-width: 800px) {
+      .list {
+        margin: 0 auto;
+      }
+    }
+    .list__table {
+      width: 100%;
+      border-spacing: 0;
+      color: var(--grey-3);
+    }
+    .list__header {
+      padding: 3rem 2rem;
+      background: white;
+      border-top-left-radius: 0.4rem;
+      border-top-right-radius: 0.4rem;
+    }
+    .list__header h1, .list__header h5 {
+      margin: 0;
+      padding: 0;
+    }
+    .list__header h5 {
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .list__value {
+      display: block;
+      font-size: 18px;
+    }
+    .list__label {
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    .list__row {
+      background: var(--grey-7);
+      cursor: pointer;
+      transition: all 300ms ease;
+    }
+    .list__row:hover, .list__row:focus {
+      transform: scale(1.05);
+      box-shadow: 0px 15px 28px rgba(0, 0, 0, 0.1), 0px 5px 12px rgba(0, 0, 0, 0.08);
+      transition: all 300ms ease;
+    }
+    .list__row:not(:last-of-type) .list__cell {
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.08);
+    }
+    .list__row:first-of-type {
+      color: var(--gold-dark);
+      background: var(--grey-9);
+    }
+    .list__row:first-of-type .list__cell:first-of-type {
+      background: var(--gold);
+      color: var(--gold-dark);
+    }
+    .list__row:nth-of-type(2) {
+      color: var(--grey-2);
+      background: var(--grey-9);
+    }
+    .list__row:nth-of-type(2) .list__cell:first-of-type {
+      background: var(--grey-4);
+      color: var(--grey-2);
+    }
+    .list__row:nth-of-type(3) {
+      color: var(--bronze-dark);
+      background: var(--grey-9);
+    }
+    .list__row:nth-of-type(3) .list__cell:first-of-type {
+      background: var(--bronze);
+      color: var(--bronze-dark);
+    }
+    .list__cell {
+      padding: 1rem;
+    }
+    .list__cell:first-of-type {
+      text-align: center;
+      padding: 1rem 0.2rem;
+      background: var(--grey-5);
+    }
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--trans-black);
+      display: none;
+      cursor: pointer;
+      transition: all 300ms ease;
+    }
+    .overlay.is-open {
+      display: block;
+    }
+    
+    .sidebar {
+      position: fixed;
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      top: 0;
+      bottom: 0;
+      box-shadow: none;
+      right: -500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      /*@media screen and (max-width: 650px) {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+      }*/
+      transition: all 300ms ease;
+    }
+    .sidebar.is-open {
+      right: 0;
+      transition: all 300ms ease;
+      box-shadow: 0px 0px 100px var(--black);
+    }
+    .sidebar__header {
+      display: flex;
+      justify-content: space-between;
+      background: var(--grey-9);
+      align-items: center;
+    }
+    .sidebar__header, .sidebar__body {
+      padding: 2rem;
+    }
+    .sidebar__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--grey-4);
+    }
+    
+    .button {
+      font-family: inherit;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+    .button:focus, .button:active {
+      outline: 0;
+    }
+    .button--close {
+      padding: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1;
+      color: var(--grey-5);
+    }
+    .button--close:hover {
+      color: var(--grey--4);
+    }
+    
+    .driver {
+      display: flex;
+      align-items: flex-start;
+      opacity: 0;
+      position: relative;
+      left: 100px;
+      -webkit-animation: fade 500ms ease 150ms forwards;
+              animation: fade 500ms ease 150ms forwards;
+    }
+    .driver__image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-size: 220px;
+      background-repeat: no-repeat;
+      background-position: top center;
+      border: 3px solid white;
+      box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.12);
+      margin-right: 1.5rem;
+    }
+    .driver__content {
+      width: auto;
+    }
+    .driver__title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+    }
+    .driver__table {
+      width: 100%;
+      color: var(--grey-2);
+    }
+    .driver__table small {
+      color: var(--grey-4);
+    }
+    .driver__table td {
+      padding: 0.3rem 0.6rem 0.3rem 0;
+      height: 2rem;
+    }
+    .driver__table td img {
+      position: relative;
+      top: 5px;
+      margin-right: 6px;
+    }
+    
+    @-webkit-keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        left: 0;
+      }
+    }
+    
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        left: 0;
+      }
+    }
+  </style>
 
 </head>
 
@@ -40,22 +517,22 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid me-2 img-logo">Mustang Makeover</a></h1>
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.png" alt=""
+            class="img-fluid me-2 img-logo">Mustang Makeover</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-       <!-- <a href="index.html" class="logo me-auto"></a> -->
+      <!-- <a href="index.html" class="logo me-auto"></a> -->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Makeover</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
 
-           <!-- <li><a href="#about">About</a></li> -->
+          <!-- <li><a href="#about">About</a></li> -->
 
-           <li><a href="memories.html">Memories</a></li>
+          <li><a href="memories.html">Makeovers</a></li>
+          <li id="navbar-admin" style="display: none;"><a href="admin.html">Admin</a></li>
 
-           <li><a href="login.html">Login</a></li>
-
-           <li><a href="admin.html">Admin</a></li>
-
+          <li id="navbar-login"><a href="login.html">Login</a></li>
+          <li id="navbar-logout" style="display: none;"><a href="">Logout</a></li>
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -64,7 +541,7 @@
     </div>
   </header><!-- End Header -->
 
-   <section id="hero">
+  <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
@@ -76,12 +553,15 @@
 ">
           <div class="carousel-container">
             <div class="container slide-bg pt-4 pb-4">
-              <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500"><span class="text-red">Mustang</span> Makeover</h2>
-              <p data-aos="fade-up" data-aos-duration="1200"data-aos-delay="1000">Clean up the school for a more eco-friendly environment while bringing the students aware of the amount of waste they use.
-</p>
+              <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500"><span class="text-red">Mustang</span>
+                Makeover</h2>
+              <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">Calling all Mustangs: clean up the
+                campus and earn points for a prize!
+              </p>
 
 
-              <a href="#about" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700" class="btn-get-started mt-3" >Read More</a>
+              <a href="#makeover" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1700"
+                class="btn-get-started mt-3">Upload Now</a>
             </div>
           </div>
         </div>
@@ -90,9 +570,12 @@
         <div class="carousel-item" style="background-image: url(assets/img/bg2.jpeg); background-position: bottom">
           <div class="carousel-container">
             <div class="container slide-bg pt-4 pb-4">
-              <h2 class="animate__animated animate__fadeInDown"><span class="text-red">Sign up</span> for shifts to clean up around the school.</h2>
-              <p class="animate__animated animate__fadeInUp">Revolve around the overconsumption that takes place at ASIJ</p>
-              <a href="#about" class="btn-get-started mt-3 animate__animated animate__fadeInUp" >Read More</a>
+              <h2 class="animate__animated animate__fadeInDown">Our objective is to clean up the school for a more <span
+                  class="text-red">eco-friendly environment.</span></h2>
+              <p class="animate__animated animate__fadeInUp">We focus on the 12th SDG, responsible consumption and
+                production.
+              </p>
+              <a href="#about" class="btn-get-started mt-3 animate__animated animate__fadeInUp">Learn More</a>
 
 
             </div>
@@ -113,179 +596,292 @@
     </div>
   </section><!-- End Hero -->
   <main id="main">
-    
-
-  
-
-    
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="row content px-5">
-            <h2 data-aos="fade-right" data-aos-duration="1000"> <span class="text-red mx-2">About us</span></h2>
-
-        </div>
-        <div class="row content mx-2">
-          <div class="col-lg-6 px-5"data-aos="fade-right" data-aos-duration="1000">
-
-             <p class="aligns mt-2">Hello! We are Mustang Makeover. We are Suri Choi, Emi Matsumoto, and Lily Stone-Bourgeois. Our goal is to contribute to making ASIJ a more sustainable campus. By cleaning up trash and giving old items away, we hope to make students more aware of over-consumption and waste. Join us in our fight for the future!</p>
-                         <ul>
-              <li class="aligns"><i class="fa-solid fa-recycle mt-2"></i>Looking for a way to help the ASIJ community and commit acts of service? This is where <span class="text-bold">Mustang Makeover</span> comes in. Sign up for shifts to clean up around the school. Sign up the day of or before, and you must submit a before and after picture of an area you picked up trash from. Post it on the feed to get credit! </li>
-              <li class="aligns mt-3"><i class="fa-solid fa-recycle mt-2"></i> Looking for somewhere to donate your old items? We have a solution: <span class="text-bold">Mustang Memories</span>. Post your old items on the giveaway page! Add your email underneath, and change the status depending on the situation. </li>
-
-
-
-            </ul>
-             
-
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 px-5 "data-aos="fade-left" data-aos-duration="1000">
-            <img class="img-fluid intro-img" src="assets/img/intro1.webp">
-
-          </div>
-        </div>
-        <div class="row content px-5 mt-5">
-            <h2> <span class="text-red mx-2" data-aos="fade-down" data-aos-duration="1000">Functionality</span></h2>
-            <p class="mx-2 bg-font" data-aos="fade-up" data-aos-duration="1000">A user uploads two photos (one before and one after picking up trash), and the post is displayed on the website feed with the user’s ASIJ school email as the “username”.  
-The website has four pages: the home page, the sign-up page, the Mustang Makeover page, and the Mustang Memories page. 
-</p>
-
-
-      </div>
-              <div class="row content px-5 mt-5">
-            <h2  data-aos="fade-down" data-aos-duration="1000"> <span class="text-red mx-2">Objective </span></h2>
-            <p class="mx-2 bg-font" data-aos="fade-up" data-aos-duration="1000">As students, we have noticed the trash that gets left around campus. Our objective is to clean up the school for a more eco-friendly environment while bringing the students aware of the amount of waste they use. In this way, ASIJ can help students make more eco-conscious choices. Our other objective revolves around the overconsumption that takes place at ASIJ. In an age with highly rapid trends, students buy a lot that they stop using after a couple of months. By establishing a place for students to post items open to other students, we hope to promote a sustainable reusing system. 
-</p>
-
-        </div>
-    </section><!-- End About Section -->
 
     <!-- ======= Makeover Section ======= -->
     <section id="makeover" class="makeover">
       <div class="container">
         <div class="row content px-5">
-         <h2 data-aos="fade-down" data-aos-duration="1000"> <span class="text-red mx-2">Upload</span></h2>
+          <h2 data-aos="fade-down" data-aos-duration="1000"> <span class="text-red mx-2">Upload Your Makeover</span>
+          </h2>
           <div class="col-md-6">
 
             <div class="card file-card mt-3" data-aos="fade-right" data-aos-duration="1000">
-              <div class="card-body">
+              <div class="card-body" style="height: 390px;">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <!-- Upload  -->
+                      <div>
+                        <div>
+                          Image Before Trash Was Cleaned
+                        </div>
+                        <form id="file-upload-form" class="uploader">
+                          <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
 
-                <div  class="file-input">
+                          <label for="file-upload" id="file-drag">
+                            <img id="file-image" src="#" alt="Preview" class="hidden">
+                            <div id="start">
+                              <i class="fa fa-download" aria-hidden="true"></i>
+                              <div>Select a file or drag here</div>
+                              <div id="notimage" class="hidden">Please select an image</div>
+                              <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                            </div>
+                            <div id="response" class="hidden">
+                              <div id="messages"></div>
+                            </div>
+                          </label>
+                        </form>
+                        <div style="text-align: center;">
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="next1">Next</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div style="display: flex; flex-direction: column;">
+                        <div>
+                          Image After Trash Was Cleaned
+                        </div>
+                        <form id="file-upload-form2" class="uploader">
+                          <input id="file-upload2" type="file" name="fileUpload2" accept="image/*" />
 
-                  <center>
-    <h5>Upload and Earn Points!</h5>
-                <h6 class="mt-3">Image for Before</h6>
-                <input class="form-control mx-2 mt-3 sum-email" type="file" id="before">
-                <h6 class="mt-4">Image for After</h6>
-                <input class="form-control mx-2 mt-3 sum-email" type="file" id="after">
-                
-                
-                <input type="email" class="form-control mt-4 sum-email" id="email" placeholder="Email">
-                      <button style="width: 90%;" class="btn btn-danger mt-5 mx-5 upload" id="send">Upload</button>
+                          <label for="file-upload2" id="file-drag2">
+                            <img id="file-image2" src="#" alt="Preview" class="hidden">
+                            <div id="start2">
+                              <i class="fa fa-download" aria-hidden="true"></i>
+                              <div>Select a file or drag here</div>
+                              <div id="notimage2" class="hidden">Please select an image</div>
+                              <span id="file-upload-btn2" class="btn btn-primary">Select a file</span>
+                            </div>
+                            <div id="response2" class="hidden">
+                              <div id="messages2"></div>
+                            </div>
+                          </label>
+                        </form>
+                        <div style="text-align: center; display: flex; flex-direction: row;">
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="previous1">Previous</button>
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="next2">Next</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div style="display: flex; flex-direction: column;">
+                        <div>
+                          Description
+                        </div>
+                        <textarea placeholder="Description of where, when and why you picked up trash."
+                          id="descript"></textarea>
+                        <div style="text-align: center; display: flex; flex-direction: row;">
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="previous2">Previous</button>
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="send">
+                            <span style="display: none;" class="spinner-border spinner-border-sm" role="status"
+                              aria-hidden="true" id="upload-spinner"></span>
+                            <span id="upload-text">Upload</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-              </center>
+                <!-- <div class="file-input">
+
+                  <h5>Upload and Earn Points!</h5>
+                  <h6 class="mt-3">Image for Before</h6>
+                  <input class="form-control mx-2 mt-3 sum-email" type="file" id="before">
+                  <h6 class="mt-4">Image for After</h6>
+                  <input class="form-control mx-2 mt-3 sum-email" type="file" id="after">
+
+
+                  <input type="email" class="form-control mt-4 sum-email" id="email" placeholder="Email">
+                  <button style="width: 90%;" class="btn btn-danger mt-5 mx-5 upload" id="send">Upload</button>
+              </div> -->
               </div>
-           </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+            <img class="img-fluid upload-img mt-3" src="assets/img/up1.jpg">
+          </div>
+
+
         </div>
-  </div>
-            <div class="col-md-6"data-aos="fade-left" data-aos-duration="1000">
-                <img class="img-fluid upload-img mt-3" src="assets/img/up1.jpg">
-              </div>
-
-
-    </div>
-    </div>
+      </div>
     </section>
-   
-  <!-- End Makeover Section -->
+
+    <!-- End Makeover Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="row content px-5">
+          <h2 data-aos="fade-right" data-aos-duration="1000"> <span class="text-red mx-2">About us</span></h2>
+
+        </div>
+        <div class="row content mx-2">
+          <div class="col-lg-6 px-5" data-aos="fade-right" data-aos-duration="1000">
+
+            <p class="aligns mt-2">Hello! We are Mustang Makeover. We hope to make students more aware of
+              over-consumption and waste. Join us in our fight for the future!</p>
+            <ul>
+              <li class="aligns"><i class="fa-solid fa-recycle mt-2"></i>Looking for a way to help the ASIJ community
+                and commit acts of service? This is where <span class="text-bold">Mustang Makeover</span> comes in.
+                Submit a before and after picture of an area you picked up trash from or cleaned up. Post it on our
+                website to earn a point!</li>
+              <li class="aligns mt-3"><i class="fa-solid fa-recycle mt-2"></i>Looking for somewhere to donate your old
+                items? We have a solution: <span class="text-bold">Mustang Memories</span>. Submit photos of your old
+                items to our Instagram page for a donation! Find out more about the details on <a
+                  href="https://www.instagram.com/mustangmakeovers/">@mustangmakeovers</a> on Instagram. </li>
+
+
+
+            </ul>
+
+
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 px-5 " data-aos="fade-left" data-aos-duration="1000">
+            <img class="img-fluid intro-img" src="assets/img/intro1.webp">
+
+          </div>
+        </div>
+        <!-- <div class="row content px-5 mt-5">
+          <h2> <span class="text-red mx-2" data-aos="fade-down" data-aos-duration="1000">Functionality</span></h2>
+          <p class="mx-2 bg-font" data-aos="fade-up" data-aos-duration="1000">A user uploads two photos (one before and
+            one after picking up trash), and the post is displayed on the website feed with the user's ASIJ school email
+            as the “username”.
+            The website has four pages: the home page, the sign-up page, the Mustang Makeover page, and the Mustang
+            Memories page.
+          </p>
+
+
+        </div> -->
+        <div class="row content px-5 mt-5">
+          <h2 data-aos="fade-down" data-aos-duration="1000"> <span class="text-red mx-2">Objective </span></h2>
+          <p class="mx-2 bg-font" data-aos="fade-up" data-aos-duration="1000">As students, we have noticed the trash
+            that gets left around campus. Our objective is to clean up the school for a more <span
+              class="text-bold">eco-friendly environment</span> while bringing the students aware of the amount of waste
+            they use.<br /><br />
+            Our other objective revolves around the overconsumption at ASIJ. In an age with rapid trends, students buy a
+            lot that they stop using after a couple of months. By establishing a place for students to post items open
+            to other students, we hope to promote a <span class="text-bold">sustainable reusing system.</span>
+          </p>
+
+        </div>
+    </section><!-- End About Section -->
+
     <section id="team" class="leaderboard">
-      <div class="container"><div class="row content px-5">
-        <h2> <span class="text-red mx-2" data-aos="fade-down" data-aos-duration="1000">Team</span></h2>
-        <div class="row team-row" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+        <div class="row content px-5">
+          <h2> <span class="text-red mx-2" data-aos="fade-down" data-aos-duration="1000">Team</span></h2>
+          <div class="row team-row" data-aos="fade-up" data-aos-duration="1000">
             <div class="col-md-4">
               <div class="card_img">
                 <img class="img-fulid team-img" src="assets/img/t1.png" alt="Card image cap">
               </div>
-                  <div class="card-body mt-2">
-                    <h5 class="card-title">Suri Choi
-</h5>
-                                    <p class="text-it">25chois@asij.ac.jp</p>
+              <div class="card-body mt-2">
+                <h5 class="card-title">Suri Choi
+                </h5>
+                <p class="text-it">25chois@asij.ac.jp</p>
 
-                    <p class="card-text mt-2 card-intro">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text mt-2 card-intro">Hi, mustangs! My name is Suri, and I'm a sophomore at ASIJ. I am a
+                  member of the Student Council, as well as many other clubs and projects in our community. I am more
+                  than happy to work with you to make ASIJ sustainable!</p>
 
-                  </div>
+              </div>
             </div>
             <div class="col-md-4">
               <div class="card_img">
                 <img class="img-fulid team-img" src="assets/img/t2.png" alt="Card image cap">
               </div>
-                <div class="card-body mt-2">
-                  <h5 class="card-title">Lily Stone-Bourgeois </h5>
-                  <p class="text-it">25stonebourgeoisl@asij.ac.jp</p>
-                  <p class="card-text mt-2 card-intro">Hi, I’m Lily Stone-Bourgeois! I’m a sophomore, and I’ve been at ASIJ since 6th grade. I’m currently the leader of the ASIJ Business Club and TASSEL, but I’m also involved in many other clubs and projects. I look forward to working with everyone!</p>
-                </div>
+              <div class="card-body mt-2">
+                <h5 class="card-title">Lily Stone-Bourgeois </h5>
+                <p class="text-it">25stonebourgeoisl@asij.ac.jp</p>
+                <p class="card-text mt-2 card-intro">Hi, I'm Lily! I'm a sophomore, and I've been at ASIJ since 6th
+                  grade. I'm currently the leader of the ASIJ Business Club and TASSEL, but I'm also involved in many
+                  other clubs and projects.
+                  I look forward to working with everyone!
+                </p>
+              </div>
             </div>
             <div class="col-md-4">
               <div class="card_img">
                 <img class="img-fulid team-img" src="assets/img/t3.png" alt="Card image cap">
               </div>
-                <div class="card-body mt-2">
-                  <h5 class="card-title">Emi Matsumoto</h5>
-                                    <p class="text-it">25matsumotoe@asij.ac.jp</p>
+              <div class="card-body mt-2">
+                <h5 class="card-title">Emi Matsumoto</h5>
+                <p class="text-it">25matsumotoe@asij.ac.jp</p>
 
-                  <p class="card-text mt-2 card-intro">Hi my name is Emi Matsumoto and I’m currently a sophomore at ASIJ. I’m involved in many things here at ASIJ, ranging from being on different sports teams to organizing the TEDxYouth@ASIJ event! I’m so grateful for this opportunity, and can’t wait for the things to come!</p>
+                <p class="card-text mt-2 card-intro">Hi, my name is Emi, and I'm a sophomore at ASIJ. I'm involved in
+                  many things here at ASIJ, from being on different sports teams to organizing the TEDxYouth@ASIJ event!
+                  I'm so grateful for this opportunity, and can't wait for the things to come!
+                </p>
 
-                </div>
+              </div>
             </div>
-        </div>
-      </div></div>
-    
-    </section>
-  <!-- ======= Leaderboard Section ======= -->
-  
-    <section id="leaderboard" class="leaderboard">
-      <div class="container">
-        <div class="row content px-5">
-          <h2 data-aos="fade-up" data-aos-duration="1000"> <span class="text-red mx-2">Leaderboard</span></h2>
-          <div class="table-responsive" data-aos="fade-up" data-aos-duration="1000">
-
-          <table class="table table-striped">
-            <thead>
-              <th>Ranking</th>
-              <th>Email</th>
-              <th>Point</th>
-            </thead>
-            
-              <tbody id="ranking"></tbody>
-            
-          </table>
+          </div>
         </div>
       </div>
-    </div>
-    
+
     </section>
-   
-  <!-- End Leaderboard Section -->
+    <!-- ======= Leaderboard Section ======= -->
+
+    <section id="leaderboard" class="leaderboard">
+      <div class="container">
+<div class="row content px-5">
+          <h2 data-aos="fade-up" data-aos-duration="1000"> <span class="text-red mx-2">Leaderboard</span></h2>
+        <div class="wrapper">
+          <div class="list">
+            <div class="list__header">
+              <h5>Mustang Makeover</h5>
+              <h1>Leaderboard</h1>
+            </div>
+            <div class="list__body">
+              <table class="list__table" id="ranking">
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+        <div class="sidebar">
+          <div class="sidebar__header">
+            <div class="sidebar__title">Driver information</div>
+            <button class="button button--close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="sidebar__body"></div>
+        </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- End Leaderboard Section -->
 
 
     <!-- ======= JoinUs Section ======= -->
 
 
     <section id="joinUs" class="joinUs">
-  <div class="container">
-    <div class="row content px-5">
-      <h2 data-aos="fade-down">
-        <span class="text-red mx-2">Join Us</span>
-      </h2>
-    </div>
-    <div class="row content ms-5" data-aos="fade-up">
-         <p> Got any questions? Contact us at <a href="https://www.instagram.com/mustangmakeovers/">@mustangmakeovers</a> on Instagram.</p>
-    </div>
-  </div>
-</section>
-   
-  <!-- End JoinUs Section -->
+      <div class="container">
+        <div class="row content px-5">
+          <h2 data-aos="fade-down">
+            <span class="text-red mx-2">Join Us</span>
+          </h2>
+        </div>
+        <div class="row content ms-5" data-aos="fade-up">
+          <p> Follow us and support us on Instagram <a
+              href="https://www.instagram.com/mustangmakeovers/">@mustangmakeovers</a>  <span><img src="/assets/img/instagram.png" style="width: 20px; height: 20px;" /></span></p>
+          <p>If you have any questions, you can send us a DM on Instagram.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- End JoinUs Section -->
 
 
   </main><!-- End #main -->
@@ -301,7 +897,8 @@ The website has four pages: the home page, the sign-up page, the Mustang Makeove
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -311,18 +908,251 @@ The website has four pages: the home page, the sign-up page, the Mustang Makeove
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-  AOS.init();
-  $("#file").on('change',function(){
-  var fileName = $("#file").val();
-  $(".file-input").val(fileName);
-});
-</script>
+    AOS.init();
+    $("#file").on('change', function () {
+      var fileName = $("#file").val();
+      $(".file-input").val(fileName);
+    });
+  </script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+  <script>
+    // File Upload
+    // 
+    function ekUpload() {
+      function Init() {
 
+        console.log("Upload Initialised");
+
+        var fileSelect = document.getElementById('file-upload'),
+          fileDrag = document.getElementById('file-drag'),
+          submitButton = document.getElementById('submit-button');
+
+        fileSelect.addEventListener('change', fileSelectHandler, false);
+
+        // Is XHR2 available?
+        var xhr = new XMLHttpRequest();
+        if (xhr.upload) {
+          // File Drop
+          fileDrag.addEventListener('dragover', fileDragHover, false);
+          fileDrag.addEventListener('dragleave', fileDragHover, false);
+          fileDrag.addEventListener('drop', fileSelectHandler, false);
+        }
+      }
+
+      function fileDragHover(e) {
+        var fileDrag = document.getElementById('file-drag');
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+      }
+
+      function fileSelectHandler(e) {
+        // Fetch FileList object
+        var files = e.target.files || e.dataTransfer.files;
+
+        // Cancel event and hover styling
+        fileDragHover(e);
+
+        // Process all File objects
+        for (var i = 0, f; f = files[i]; i++) {
+          parseFile(f);
+          // uploadFile(f);
+        }
+      }
+
+      // Output
+      function output(msg) {
+        // Response
+        var m = document.getElementById('messages');
+        m.innerHTML = msg;
+      }
+
+      function parseFile(file) {
+
+        console.log(file.name);
+        output(
+          '<strong>' + encodeURI(file.name) + '</strong>'
+        );
+
+        // var fileType = file.type;
+        // console.log(fileType);
+        var imageName = file.name;
+
+        var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+        if (isGood) {
+          document.getElementById('start').classList.add("hidden");
+          document.getElementById('response').classList.remove("hidden");
+          document.getElementById('notimage').classList.add("hidden");
+          // Thumbnail Preview
+          document.getElementById('file-image').classList.remove("hidden");
+          document.getElementById('file-image').src = URL.createObjectURL(file);
+        }
+        else {
+          document.getElementById('file-image').classList.add("hidden");
+          document.getElementById('notimage').classList.remove("hidden");
+          document.getElementById('start').classList.remove("hidden");
+          document.getElementById('response').classList.add("hidden");
+          document.getElementById("file-upload-form").reset();
+        }
+      }
+
+      function uploadFile(file) {
+
+        var xhr = new XMLHttpRequest(),
+          fileInput = document.getElementById('class-roster-file'),
+          fileSizeLimit = 1024; // In MB
+        if (xhr.upload) {
+          // Check if file is less than x MB
+          if (file.size <= fileSizeLimit * 1024 * 1024) {
+
+            // File received / failed
+            xhr.onreadystatechange = function (e) {
+              if (xhr.readyState == 4) {
+                // Everything is good!
+
+                // progress.className = (xhr.status == 200 ? "success" : "failure");
+                // document.location.reload(true);
+              }
+            };
+
+            // Start upload
+            xhr.open('POST', document.getElementById('file-upload-form').action, true);
+            xhr.setRequestHeader('X-File-Name', file.name);
+            xhr.setRequestHeader('X-File-Size', file.size);
+            xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+            xhr.send(file);
+          } else {
+            output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
+          }
+        }
+      }
+
+      // Check for the various File API support.
+      if (window.File && window.FileList && window.FileReader) {
+        Init();
+      } else {
+        document.getElementById('file-drag').style.display = 'none';
+      }
+    }
+    ekUpload();
+
+    function ekUpload2() {
+      function Init() {
+
+        console.log("Upload Initialised");
+
+        var fileSelect = document.getElementById('file-upload2'),
+          fileDrag = document.getElementById('file-drag2'),
+          submitButton = document.getElementById('submit-button2');
+
+        fileSelect.addEventListener('change', fileSelectHandler, false);
+
+        // Is XHR2 available?
+        var xhr = new XMLHttpRequest();
+        if (xhr.upload) {
+          // File Drop
+          fileDrag.addEventListener('dragover', fileDragHover, false);
+          fileDrag.addEventListener('dragleave', fileDragHover, false);
+          fileDrag.addEventListener('drop', fileSelectHandler, false);
+        }
+      }
+
+      function fileDragHover(e) {
+        var fileDrag = document.getElementById('file-drag2');
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+      }
+
+      function fileSelectHandler(e) {
+        // Fetch FileList object
+        var files = e.target.files || e.dataTransfer.files;
+
+        // Cancel event and hover styling
+        fileDragHover(e);
+
+        // Process all File objects
+        for (var i = 0, f; f = files[i]; i++) {
+          parseFile(f);
+        }
+      }
+
+      // Output
+      function output(msg) {
+        // Response
+        var m = document.getElementById('messages');
+        m.innerHTML = msg;
+      }
+
+      function parseFile(file) {
+
+        console.log(file.name);
+        output(
+          '<strong>' + encodeURI(file.name) + '</strong>'
+        );
+
+        // var fileType = file.type;
+        // console.log(fileType);
+        var imageName = file.name;
+
+        var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+        if (isGood) {
+          document.getElementById('start2').classList.add("hidden");
+          document.getElementById('response2').classList.remove("hidden");
+          document.getElementById('notimage2').classList.add("hidden");
+          // Thumbnail Preview
+          document.getElementById('file-image2').classList.remove("hidden");
+          document.getElementById('file-image2').src = URL.createObjectURL(file);
+        }
+        else {
+          document.getElementById('file-image2').classList.add("hidden");
+          document.getElementById('notimage2').classList.remove("hidden");
+          document.getElementById('start2').classList.remove("hidden");
+          document.getElementById('response2').classList.add("hidden");
+          document.getElementById("file-upload-form2").reset();
+        }
+      }
+
+      // Check for the various File API support.
+      if (window.File && window.FileList && window.FileReader) {
+        Init();
+      } else {
+        document.getElementById('file-drag').style.display = 'none';
+      }
+    }
+    ekUpload2();
+  </script>
+  <script>
+    const myCarouselElement = document.querySelector('#myCarousel')
+
+    const carousel = new bootstrap.Carousel(myCarouselElement, {})
+
+    document.getElementById('next1').addEventListener("click", function () {
+      carousel.next();
+    })
+
+    document.getElementById('previous1').addEventListener("click", function () {
+      carousel.prev();
+    })
+
+    document.getElementById('next2').addEventListener("click", function () {
+      carousel.next();
+    })
+
+    document.getElementById('previous2').addEventListener("click", function () {
+      carousel.prev();
+    })
+
+  </script>
 </body>
 
 </html>
