@@ -96,6 +96,11 @@
       opacity: 0.3;
     }
 
+    .uploader label.hover #start3 i.fa {
+      transform: scale(0.8);
+      opacity: 0.3;
+    }
+
     .uploader #start {
       float: left;
       clear: both;
@@ -103,6 +108,12 @@
     }
 
     .uploader #start2 {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .uploader #start3 {
       float: left;
       clear: both;
       width: 100%;
@@ -116,6 +127,10 @@
       display: none;
     }
 
+    .uploader #start3.hidden {
+      display: none;
+    }
+
     .uploader #start i.fa {
       font-size: 50px;
       margin-bottom: 1rem;
@@ -123,6 +138,12 @@
     }
 
     .uploader #start2 i.fa {
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .uploader #start3 i.fa {
       font-size: 50px;
       margin-bottom: 1rem;
       transition: all 0.2s ease-in-out;
@@ -140,6 +161,12 @@
       width: 100%;
     }
 
+    .uploader #response3 {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
     .uploader #response.hidden {
       display: none;
     }
@@ -148,11 +175,19 @@
       display: none;
     }
 
+    .uploader #response3.hidden {
+      display: none;
+    }
+
     .uploader #response #messages {
       margin-bottom: 0.5rem;
     }
 
     .uploader #response2 #messages2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .uploader #response3 #messages3 {
       margin-bottom: 0.5rem;
     }
 
@@ -174,11 +209,24 @@
       max-height: 180px;
     }
 
+    .uploader #file-image3 {
+      display: inline;
+      margin: 0 auto 0.5rem auto;
+      width: auto;
+      height: auto;
+      max-width: 250px;
+      max-height: 180px;
+    }
+
     .uploader #file-image.hidden {
       display: none;
     }
 
     .uploader #file-image2.hidden {
+      display: none;
+    }
+
+    .uploader #file-image3.hidden {
       display: none;
     }
 
@@ -196,11 +244,22 @@
       width: 100%;
     }
 
+    .uploader #notimage3 {
+      display: block;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
     .uploader #notimage.hidden {
       display: none;
     }
 
     .uploader #notimage2.hidden {
+      display: none;
+    }
+
+    .uploader #notimage3.hidden {
       display: none;
     }
 
@@ -507,6 +566,72 @@
         left: 0;
       }
     }
+
+.radio-section {
+  margin-top: 20px;
+}
+h1 {
+	margin-bottom: 20px;
+}
+.radio-item [type="radio"] {
+	display: none;
+}
+.radio-item + .radio-item {
+	margin-top: 15px;
+}
+.radio-item label {
+	display: block;
+	padding: 10px 60px;
+	background: white;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	min-width: 250px;
+	white-space: nowrap;
+	position: relative;
+	transition: 0.4s ease-in-out 0s;
+  color: black;
+}
+.radio-item label:after,
+.radio-item label:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+.radio-item label:after {
+	height: 19px;
+	width: 19px;
+	border: 2px solid #524eee;
+	left: 19px;
+	top: calc(50% - 12px);
+}
+.radio-item label:before {
+  background: #524eee;
+  height: 20px;
+  width: 20px;
+  left: 19px;
+  top: 11px;
+  transform: scale(5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease-in-out 0s;
+}
+.radio-item [type="radio"]:checked ~ label {
+	border-color: #524eee;
+}
+.radio-item [type="radio"]:checked ~ label::before {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}
+
+.radio-img {
+  width: 30px;
+  height: 30px;
+}
+
   </style>
 
 </head>
@@ -518,7 +643,7 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.png" alt=""
-            class="img-fluid me-2 img-logo">Mustang Makeover</a></h1>
+            class="img-fluid me-2 img-logo" />Mustang Makeover</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"></a> -->
 
@@ -596,7 +721,6 @@
     </div>
   </section><!-- End Hero -->
   <main id="main">
-
     <!-- ======= Makeover Section ======= -->
     <section id="makeover" class="makeover">
       <div class="container">
@@ -610,8 +734,25 @@
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <!-- Upload  -->
                       <div>
+                        Choose a Category
+                      </div>
+                      <div style="height: 240px;">
+                        <div class="radio-section">
+                          <div class="radio-list">
+                            <div class="radio-item"><input name="radio" id="radio1" type="radio"><label for="radio1">WASTE <img class="radio-img" src="./assets/img/waste.png" /></label></div>
+                            <div class="radio-item"><input name="radio" id="radio2" type="radio"><label for="radio2">TRANSPORTATION <img class="radio-img" src="./assets/img/transporation.png" /></label></div>
+                            <div class="radio-item"><input name="radio" id="radio3" type="radio"><label for="radio3">ENVIRONMENTAL <img class="radio-img" src="./assets/img/environmental.png" /></label></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <button class="btn btn-danger mt-4 mx-5 upload" id="next0">Next</button>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <!-- Upload  -->
+                      <div style="display: flex; flex-direction: column;">
                         <div>
                           Image Before Trash Was Cleaned
                         </div>
@@ -631,7 +772,8 @@
                             </div>
                           </label>
                         </form>
-                        <div style="text-align: center;">
+                        <div style="text-align: center; display: flex; flex-direction: row;">
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="previous0">Previous</button>
                           <button class="btn btn-danger mt-4 mx-5 upload" id="next1">Next</button>
                         </div>
                       </div>
@@ -660,6 +802,33 @@
                         <div style="text-align: center; display: flex; flex-direction: row;">
                           <button class="btn btn-danger mt-4 mx-5 upload" id="previous1">Previous</button>
                           <button class="btn btn-danger mt-4 mx-5 upload" id="next2">Next</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div style="display: flex; flex-direction: column;">
+                        <div>
+                          Image
+                        </div>
+                        <form id="file-upload-form3" class="uploader">
+                          <input id="file-upload3" type="file" name="fileUpload3" accept="image/*" />
+
+                          <label for="file-upload3" id="file-drag3">
+                            <img id="file-image3" src="#" alt="Preview" class="hidden">
+                            <div id="start3">
+                              <i class="fa fa-download" aria-hidden="true"></i>
+                              <div>Select a file or drag here</div>
+                              <div id="notimage3" class="hidden">Please select an image</div>
+                              <span id="file-upload-btn3" class="btn btn-primary">Select a file</span>
+                            </div>
+                            <div id="response3" class="hidden">
+                              <div id="messages3"></div>
+                            </div>
+                          </label>
+                        </form>
+                        <div style="text-align: center; display: flex; flex-direction: row;">
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="previous3">Previous</button>
+                          <button class="btn btn-danger mt-4 mx-5 upload" id="next3">Next</button>
                         </div>
                       </div>
                     </div>
@@ -1130,14 +1299,128 @@
       }
     }
     ekUpload2();
+
+    function ekUpload3() {
+      function Init() {
+
+        console.log("Upload Initialised");
+
+        var fileSelect = document.getElementById('file-upload3'),
+          fileDrag = document.getElementById('file-drag3'),
+          submitButton = document.getElementById('submit-button3');
+
+        fileSelect.addEventListener('change', fileSelectHandler, false);
+
+        // Is XHR2 available?
+        var xhr = new XMLHttpRequest();
+        if (xhr.upload) {
+          // File Drop
+          fileDrag.addEventListener('dragover', fileDragHover, false);
+          fileDrag.addEventListener('dragleave', fileDragHover, false);
+          fileDrag.addEventListener('drop', fileSelectHandler, false);
+        }
+      }
+
+      function fileDragHover(e) {
+        var fileDrag = document.getElementById('file-drag3');
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+      }
+
+      function fileSelectHandler(e) {
+        // Fetch FileList object
+        var files = e.target.files || e.dataTransfer.files;
+
+        // Cancel event and hover styling
+        fileDragHover(e);
+
+        // Process all File objects
+        for (var i = 0, f; f = files[i]; i++) {
+          parseFile(f);
+        }
+      }
+
+      // Output
+      function output(msg) {
+        // Response
+        var m = document.getElementById('messages');
+        m.innerHTML = msg;
+      }
+
+      function parseFile(file) {
+
+        console.log(file.name);
+        output(
+          '<strong>' + encodeURI(file.name) + '</strong>'
+        );
+
+        // var fileType = file.type;
+        // console.log(fileType);
+        var imageName = file.name;
+
+        var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+        if (isGood) {
+          document.getElementById('start3').classList.add("hidden");
+          document.getElementById('response3').classList.remove("hidden");
+          document.getElementById('notimage3').classList.add("hidden");
+          // Thumbnail Preview
+          document.getElementById('file-image3').classList.remove("hidden");
+          document.getElementById('file-image3').src = URL.createObjectURL(file);
+        }
+        else {
+          document.getElementById('file-image3').classList.add("hidden");
+          document.getElementById('notimage3').classList.remove("hidden");
+          document.getElementById('start3').classList.remove("hidden");
+          document.getElementById('response3').classList.add("hidden");
+          document.getElementById("file-upload-form3").reset();
+        }
+      }
+
+      // Check for the various File API support.
+      if (window.File && window.FileList && window.FileReader) {
+        Init();
+      } else {
+        document.getElementById('file-drag').style.display = 'none';
+      }
+    }
+    ekUpload3();
   </script>
   <script>
     const myCarouselElement = document.querySelector('#myCarousel')
 
     const carousel = new bootstrap.Carousel(myCarouselElement, {})
 
+    document.getElementById('next0').addEventListener("click", function () {
+      if($('#radio1:checked').val())
+      {
+
+        carousel.next();
+      }
+      else if($('#radio2:checked').val())
+      {
+
+        carousel.to(3);
+      }
+      else if($('#radio3:checked').val())
+      {
+
+        carousel.to(3);
+      }
+      else
+      {
+        alert("Please select a category.")
+      }
+    })
+
     document.getElementById('next1').addEventListener("click", function () {
       carousel.next();
+    })
+
+    document.getElementById('previous0').addEventListener("click", function () {
+      carousel.prev();
     })
 
     document.getElementById('previous1').addEventListener("click", function () {
@@ -1148,8 +1431,16 @@
       carousel.next();
     })
 
+    document.getElementById('next3').addEventListener("click", function () {
+      carousel.next();
+    })
+
     document.getElementById('previous2').addEventListener("click", function () {
       carousel.prev();
+    })
+
+    document.getElementById('previous3').addEventListener("click", function () {
+      carousel.to(0);
     })
 
   </script>
